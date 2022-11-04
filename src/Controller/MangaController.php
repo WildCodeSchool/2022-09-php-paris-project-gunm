@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-Class MangaController extends AbstractController
+class MangaController extends AbstractController
 {
-    
 }
