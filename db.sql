@@ -5,7 +5,7 @@ USE `gunnm`;
 CREATE TABLE `manga` (
   `id` int NOT NULL AUTO_INCREMENT,
   `author` varchar(100) NOT NULL,
-  `parution` date NOT NULL,
+  `date_release` date NOT NULL,
   `image` varchar(255) NOT NULL,
   `title` varchar(100) NOT NULL,
   `category` varchar(100) NOT NULL,
@@ -13,13 +13,16 @@ CREATE TABLE `manga` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+ALTER TABLE gunnm.manga CHANGE parution date_release DATETIME NOT NULL;
+
+
 -- gunnm.manga_user definition
 
 CREATE TABLE `manga_user` (
   `id` int NOT NULL AUTO_INCREMENT,
   `manga_id` int NOT NULL,
   `user_id` int NOT NULL,
-  `is_favoris` tinyint(1) NOT NULL,
+  `is_fav` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `manga_user_FK` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `manga_user_FK_1` FOREIGN KEY (`id`) REFERENCES `manga` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
