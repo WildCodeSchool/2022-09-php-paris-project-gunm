@@ -5,4 +5,4 @@
 db.php
 .idea
 .vscode
-connec.php
+config/connec.php
