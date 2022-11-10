@@ -9,10 +9,10 @@
 return [
     ''             => ['HomeController','index',],
     'manga/add'    => ['MangaController','AddManga'],
-    'manga/delete' => ['MangaController','DeleteManga'] ['id'],
+    'manga/delete' => ['MangaController','DeleteManga'], /*['id']*/
     'manga/fav'    => ['MangaController','FavManga'],
     'showcase'     => ['MangaController','Showindex'],
     'library'      => ['MangaController','library'],
-    'category'     => ['MangaController','Category'] ['category'],
-    'show'         => ['MangaController','Show'] ['id'],
+    'category'     => ['MangaController','Category'], /*['category']*/
+    'show'         => ['MangaController','Show'], /*['id']*/
 ];
