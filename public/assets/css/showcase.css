@@ -1,0 +1,14 @@
+.carousel-inner img 
+{
+    height:300px;
+    object-fit:contain;
+    margin: auto;
+ }
+.buton_pink
+{
+    background-color : #eb1163;
+    color : white;
+
+}
+
+
