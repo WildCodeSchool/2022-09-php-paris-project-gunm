@@ -4,22 +4,21 @@ namespace App\Model;
 
 use App\Model;
 
-class MangaManager
+class MangaManager extends AbstractManager
 {
-    public function addManga(array $recipeManga): void
+    public const TABLE = 'manga';
+    public function addManga(array $manga)
     {
-        $connection->getConnection();
 
-        $query = 'INSERT INTO manga (title, autor, description, image, date, category) 
-        VALUES (:title, :autor, :description, :image, :date, :categorie)';
-        $statment = $pdo->prepare($query);
+        $statment = $this->pdo->prepare('INSERT INTO manga (title, author, description, image, released_at, category) 
+        VALUES (:title, :author, :description, :image, :released_at, :categorie)');
 
-        $statment->bindValue(':title', $recipeManga['title'], \PDO::PARAM_STR);
-        $statment->bindValue(':autor', $recipeManga['autor'], \PDO::PARAM_STR);
-        $statment->bindValue(':description', $recipeManga['description'], \PDO::PARAM_STR);
-        $statment->bindValue(':image', $recipeManga['image'], \PDO::PARAM_STR);
-        $statment->bindValue(':date', $recipeManga['date'], \PDO::PARAM_STR);
-        $statment->bindValue(':categorie', $recipeManga['categorie'], \PDO::PARAM_STR);
+        $statment->bindValue(':title', $manga['title'], \PDO::PARAM_STR);
+        $statment->bindValue(':autor', $manga['author'], \PDO::PARAM_STR);
+        $statment->bindValue(':description', $manga['description'], \PDO::PARAM_STR);
+        $statment->bindValue(':image', $manga['image'], \PDO::PARAM_STR);
+        $statment->bindValue(':released_at', $manga['released_at'], \PDO::PARAM_STR);
+        $statment->bindValue(':categorie', $manga['categorie'], \PDO::PARAM_STR);
 
         $statment->execute();
     }
