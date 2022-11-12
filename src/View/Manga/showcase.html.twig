@@ -3,4 +3,70 @@
 {% block header %}
 {% endblock %}
 {% block content %}
+
+    {# ---------------------------- FIRST CAROUSSEL FOR FAVORIS MANGAS ------------------------------------ #}
+
+    <h1 class="text-center">FAVORIS</h1>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+    {% for manga in mangas %} 
+        <div class="carousel-item active">
+            <img src="{{ manga.image }}" class="d-block w-100" alt="...">
+        </div>
+    {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+
+    {# ---------------------------- SECOND CAROUSSEL FOR ALL MANGAS ------------------------------------ #}
+
+    <h1 class="text-center">MANGAS</h1>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="..." class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+
+    {# ---------------------------- BUTTONS SELECTION CATEGORY MANGAS ------------------------------------ #}
+                                
+    <div class="container">
+        <div class="btn-group d-flex justy-content-center" role="group" aria-label="Basic radio toggle button group">
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="btnradio1">ALL MANGAS</label>
+
+            <input type="radio" class="btn-check " name="btnradio" id="btnradio2" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio2">SHONENS</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio3">SHOJOS</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio4">SEINENS</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio5">JOSEIS</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio6" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio6">KODOMOS</label>
+
+        </div>
+    </div>
 {% endblock %}
