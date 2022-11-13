@@ -27,4 +27,10 @@ class MangaManager extends AbstractManager
         $statement = $this->pdo->query('SELECT title, image FROM manga ORDER BY RAND() LIMIT 3');
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function selectAllMangas(): array
+    {
+        $statement = $this->pdo->query('SELECT *, DATE_FORMAT(date_release, "%d/%m/%Y") FROM manga');
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

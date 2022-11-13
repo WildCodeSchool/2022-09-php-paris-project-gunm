@@ -25,7 +25,7 @@ class MangaController extends AbstractController
     public function showmangas(): string
     {
         $model = new MangaManager();
-        $allMangas = $model->selectAll();
+        $allMangas = $model->selectAllMangas();
         return $this->twig->render('Manga/show_mangas.html.twig', ['allMangas' => $allMangas]);
     }
 }
