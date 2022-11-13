@@ -18,6 +18,14 @@ class MangaController extends AbstractController
     {
         $model = new MangaManager();
         $mangas = $model->selectManga();
-        return $this->twig->render('Manga/showcase.html.twig', ['mangas' => $mangas]);
+        $mangasRands = $model->selectMangaRand();
+        return $this->twig->render('Manga/showcase.html.twig', ['mangas' => $mangas, 'mangasRands' => $mangasRands], );
+    }
+
+    public function showmangas(): string
+    {
+        $model = new MangaManager();
+        $allMangas = $model->selectAll();
+        return $this->twig->render('Manga/show_mangas.html.twig', ['allMangas' => $allMangas], );
     }
 }
