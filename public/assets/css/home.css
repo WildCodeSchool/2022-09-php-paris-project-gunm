@@ -1,0 +1,32 @@
+
+
+.logo
+{
+    size: 5px;
+    width: 100px;
+    height: 100px;
+}
+
+.connexionbutton
+{
+    border-color: black;
+    border-width: 1px;
+    border-style:solid;
+    border-radius:15px ;
+    font-size: 16px;
+    background-color: rgb(167, 165, 165);
+
+}
+
+.connexionbutton:hover
+{
+    background-color: pink;
+}
+
+.homeintroduction
+{
+    font-family: 'Lucida Handwriting';
+    margin-top: 150px;
+    margin-left: 400px;
+    font-size:10px;
+}
