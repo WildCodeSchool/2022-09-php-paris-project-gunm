@@ -18,19 +18,26 @@ class MangaManager extends AbstractManager
 
     public function selectManga(): array
     {
-        $statement = $this->pdo->query('SELECT title, image FROM manga LIMIT 3');
+        $statement = $this->pdo->query('SELECT title, image FROM ' .static::TABLE. ' LIMIT 3');
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function selectMangaRand(): array
     {
-        $statement = $this->pdo->query('SELECT title, image FROM manga ORDER BY RAND() LIMIT 3');
+        $statement = $this->pdo->query('SELECT title, image FROM ' .static::TABLE. ' ORDER BY RAND() LIMIT 3');
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function selectAllMangas(): array
     {
-        $statement = $this->pdo->query('SELECT *, DATE_FORMAT(date_release, "%d/%m/%Y") FROM manga');
+        $statement = $this->pdo->query('SELECT * FROM ' .static::TABLE);
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function selectCategoryMangas(): array
+    {
+        $statement = $this->pdo->query('SELECT * FROM ' .static::TABLE. ' WHERE category LIKE %kodomo%');
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }
