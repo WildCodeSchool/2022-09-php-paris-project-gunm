@@ -27,10 +27,9 @@ class MangaController extends AbstractController
         $model = new MangaManager();
         $allMangas = $model->selectAllMangas();
         $timeMangas = [];
-        foreach ($allMangas as $allManga) {
+        foreach ($allMangas as $allManga ) {
             $timeMangas [] = strftime('%d-%m-%Y', strtotime($allManga['date_release'])) ;
         }
-        var_dump($timeMangas);
         return $this->twig->
         render('Manga/show_mangas.html.twig', ['allMangas' => $allMangas, 'timeMangas' => $timeMangas]);
     }
