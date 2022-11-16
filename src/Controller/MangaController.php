@@ -15,15 +15,14 @@ class MangaController extends AbstractController
     }
 
     public function showcase(): string
-    {  
-        
+    {
         $mangasRands = $this->model->selectMangaRand();
-        return $this->twig->render('Manga/showcase.html.twig', ['mangas' => $this->model->selectAll(),'mangasRands' => $mangasRands]);
+        return $this->twig->
+        render('Manga/showcase.html.twig', ['mangas' => $this->model->selectAll(),'mangasRands' => $mangasRands]);
     }
 
     public function list(): string
-    { 
-        // $timeMangas[] = strftime('%d-%m-%Y', strtotime($allManga['date_release']));
+    {
         return $this->twig->
         render('Manga/list.html.twig', ['mangas' => $this->model->selectAll()]);
     }
