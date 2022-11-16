@@ -2,4 +2,4 @@
 
 namespace App\Model;
 
-use App\Model;
+

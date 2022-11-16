@@ -9,3 +9,4 @@ class UserController extends AbstractController
         return $this->twig->render('User/login.html.twig');
     }
 }
+
