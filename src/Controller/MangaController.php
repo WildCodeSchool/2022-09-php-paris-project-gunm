@@ -6,7 +6,7 @@ use App\Model\MangaManager;
 
 class MangaController extends AbstractController
 {
-    protected MangaManager $model;
+    private MangaManager $model;
 
     public function __construct()
     {
@@ -15,22 +15,16 @@ class MangaController extends AbstractController
     }
 
     public function showcase(): string
-    {
-        $model = new MangaManager();
-        $mangas = $model->selectManga();
-        $mangasRands = $model->selectMangaRand();
-        return $this->twig->render('Manga/showcase.html.twig', ['mangas' => $mangas,'mangasRands' => $mangasRands]);
+    {  
+        
+        $mangasRands = $this->model->selectMangaRand();
+        return $this->twig->render('Manga/showcase.html.twig', ['mangas' => $this->model->selectAll(),'mangasRands' => $mangasRands]);
     }
 
-    public function showmangas(): string
-    {
-        $model = new MangaManager();
-        $allMangas = $model->selectAllMangas();
-        $timeMangas = [];
-        foreach ($allMangas as $allManga) {
-            $timeMangas [] = strftime('%d-%m-%Y', strtotime($allManga['date_release']));
-        }
+    public function list(): string
+    { 
+        // $timeMangas[] = strftime('%d-%m-%Y', strtotime($allManga['date_release']));
         return $this->twig->
-        render('Manga/show_mangas.html.twig', ['allMangas' => $allMangas, 'timeMangas' => $timeMangas]);
+        render('Manga/list.html.twig', ['mangas' => $this->model->selectAll()]);
     }
 }
