@@ -23,12 +23,12 @@ class MangaController extends AbstractController
     public function list(): string
     {
         return $this->twig->
-        render('Manga/list.html.twig', ['mangas' => $this->model->selectAll()], );
+        render('Manga/list.html.twig', ['mangas' => $this->model->selectAll()]);
     }
     public function listCategory(string $category): string
     {
         $this->model->selectOneCategoryByCategory($category);
         return $this->twig->render('Manga/list.html.twig', [
-            'mangacategory' => $this->model->selectOneCategoryByCategory($category)], );
+            'mangacategory' => $this->model->selectOneCategoryByCategory($category)]);
     }
 }
