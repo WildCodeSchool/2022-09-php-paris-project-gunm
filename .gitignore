@@ -1,3 +1,4 @@
+
 /vendor/
 /temp/*
 .phpcs-cache
@@ -5,3 +6,4 @@
 config/connec.php
 .idea
 .vscode
+/public/uploads/
