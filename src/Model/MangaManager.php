@@ -7,7 +7,7 @@ use App\Model;
 class MangaManager extends AbstractManager
 {
     public const TABLE = 'manga';
-    public function addManga(array $manga)
+    public function add(array $manga)
     {
 
         $statment = $this->pdo->prepare('INSERT INTO manga (title, author, description, image, released_at, category) 
