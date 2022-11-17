@@ -49,7 +49,7 @@ class MangaController extends AbstractController
                 if (move_uploaded_file($_FILES["image"]["tmp_name"], $filePath)) {
                     $manga['image'] = $filePath;
                     $mangaManager = new MangaManager();
-                    $mangaManager->addManga($manga);
+                    $mangaManager->add($manga);
 
                     header('Location: /');
                 }
