@@ -3,9 +3,9 @@
     background-color : #eb1163;
     color : white;
 }
-a
+.active
 {
-    color : white;
+    background-color:white;
 }
 .card_manga
 {

@@ -20,15 +20,15 @@ class MangaController extends AbstractController
         'mangas' => $this->model->selectManga(),
         'mangasRands' => $this->model->selectMangaRand()]);
     }
-    public function list(): string
+    public function list(string $category): string
     {
+        if (empty($category)) {
+            $mangas = $this->model->selectAll();
+        } else {
+            $mangas = $this->model->selectAllByCategory($category);
+        }
+
         return $this->twig->
-        render('Manga/list.html.twig', ['mangas' => $this->model->selectAll()]);
-    }
-    public function listCategory(string $category): string
-    {
-        $this->model->selectOneCategoryByCategory($category);
-        return $this->twig->render('Manga/list.html.twig', [
-            'mangacategory' => $this->model->selectOneCategoryByCategory($category)]);
+        render('Manga/list.html.twig', ['mangas' => $mangas]);
     }
 }

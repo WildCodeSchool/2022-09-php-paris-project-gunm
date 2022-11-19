@@ -5,32 +5,31 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-{{ dump(mangacategory) }}
     <div class="container mt-5 mb-5 ">
-        <div class="text-center row" role="group" aria-label="Basic radio toggle ">
+        <div class="text-center row radiogroup" role="group" aria-label="Basic radio toggle ">
             <div class="col-xl-2 col-md-3 col-sm-4 col-xs-5 mt-3">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                <label class="btn buton_pink" for="btnradio1"><a href="/manga/list?category"></a>VOIR TOUT</label>
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" onclick="change_loc('/manga/list?category=')" >
+                <label  class="btn buton_pink" for="btnradio1">VOIR TOUT</label>
             </div>
             <div class="col-xl-2 col-md-3 col-sm-4 col-xs-5 mt-3">
-                <input type="radio" class="btn-check " name="btnradio" id="btnradio2" autocomplete="off">
-                <label class="btn buton_pink" for="btnradio2"><a href="/manga/list?category="></a>SHONENS</label>
+                <input type="radio" class="btn-check " name="btnradio" id="btnradio2" autocomplete="off" onclick="change_loc('/manga/list?category=shonen')">
+                <label class="btn buton_pink" for="btnradio2">SHONENS</label>
             </div>
             <div class="col-xl-2 col-md-3 col-sm-4 col-xs-5 mt-3">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                <label class="btn buton_pink" for="btnradio3"><a href="/manga/list?category="></a>SHOJOS</label>
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" onclick="change_loc('/manga/list?category=shojo')">
+                <label class="btn buton_pink" for="btnradio3">SHOJOS</label>
             </div>
             <div class="col-xl-2 col-md-3 col-sm-4 col-xs-5 mt-3">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
-                <label class="btn buton_pink" for="btnradio4"><a href="/manga/list?category="></a>SEINENS</label>
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off" onclick="change_loc('/manga/list?category=seinen')">
+                <label class="btn buton_pink" for="btnradio4"></a>SEINENS</label>
             </div>
             <div class="col-xl-2 col-md-3 col-sm-4 col-xs-5 mt-3">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
-                <label class="btn buton_pink" for="btnradio5"><a href="/manga/list?category="></a>JOSEIS</label>
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off" onclick="change_loc('/manga/list?category=josei')">
+                <label class="btn buton_pink" for="btnradio5"></a>JOSEIS</label>
             </div> 
             <div class="col-xl-2 col-md-3 col-sm-4 col-xs-5 mt-3">
-                 <input type="radio" class="btn-check" name="btnradio" id="btnradio6" autocomplete="off">
-                <label class="btn buton_pink" for="btnradio6"><a href="/manga/list?category="></a>KODOMOS</label>
+                 <input type="radio" class="btn-check" name="btnradio" id="btnradio6" autocomplete="off" onclick="change_loc('/manga/list?category=kodomo')">
+                <label class="btn buton_pink" for="btnradio6"></a>KODOMOS</label>
             </div>
         </div>
     </div>
@@ -62,3 +61,4 @@
         </div>
     </div>
 {% endblock %}
+{% block javascript %}<script src="/assets/js/list.js"></script>{% endblock %}

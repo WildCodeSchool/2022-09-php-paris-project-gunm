@@ -9,5 +9,5 @@
 return [
     ''                      => ['HomeController', 'index',],
     'showcase'              => ['MangaController', 'showcase',],
-    'manga/list'            => ['MangaController', 'list',['category'],],
+    'manga/list'            => ['MangaController', 'list', ['category']],
 ];

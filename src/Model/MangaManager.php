@@ -9,6 +9,7 @@ class MangaManager extends AbstractManager
 {
     protected PDO $pdo;
     public const TABLE = "manga";
+
     public function __construct()
     {
         $connection = new Connection();
@@ -33,11 +34,11 @@ class MangaManager extends AbstractManager
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function selectOneCategoryByCategory(string $category): array|false
+    public function selectAllByCategory(string $category): array|false
     {
-        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE 'category=:category'");
+        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE category=:category");
         $statement->bindValue(':category', $category, \PDO::PARAM_STR);
         $statement->execute();
-        return $statement->fetch();
+        return $statement->fetchall(PDO::FETCH_ASSOC);
     }
 }
