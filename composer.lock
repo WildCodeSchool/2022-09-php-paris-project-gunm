@@ -5,7 +5,7 @@
         "This file is @generated automatically"
     ],
 
-    "content-hash": "859226786d91b85bde5904c48ed76db1",
+    "content-hash": "e66f5d5e7e08feba9cd17bf813a7b605",
     "packages": [
         {
             "name": "symfony/asset",
