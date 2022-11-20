@@ -11,3 +11,7 @@ define('APP_VIEW_PATH', __DIR__ . '/../src/View/');
 
 // database dump file path for automatic import
 define('DB_DUMP_PATH', __DIR__ . '/../database.sql');
+
+// configuration for manga object
+define('MAX_SIZE_MANGA_IMAGE', 10000);
+define('ALLOWED_EXTENSIONS_MANGA_IMAGE', ['jpg','gif','png','jpeg']);
