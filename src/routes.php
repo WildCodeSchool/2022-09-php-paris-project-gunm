@@ -10,4 +10,5 @@ return [
     ''                      => ['HomeController', 'index',],
     'showcase'              => ['MangaController', 'showcase',],
     'manga/list'            => ['MangaController', 'list', ['category']],
+    'manga/add'  => ['MangaController', 'add'],
 ];
