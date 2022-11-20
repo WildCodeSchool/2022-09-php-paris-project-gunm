@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 use App\Model\MangaManager;
 use DateTime;
 
@@ -32,7 +31,7 @@ class MangaController extends AbstractController
 
         return $this->twig->
         render('Manga/list.html.twig', ['mangas' => $mangas]);
-
+    }
     public function show()
     {
         return $this->twig->render('Manga/add.html.twig');
