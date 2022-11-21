@@ -9,24 +9,20 @@
 
 .connexionbutton
 {
-    border-color: black;
-    border-width: 1px;
-    border-style:solid;
     border-radius:15px ;
     font-size: 16px;
-    background-color: rgb(167, 165, 165);
+    background-color:#eb1163;
 
 }
 
-.connexionbutton:hover
+a
 {
-    background-color: pink;
+    color: white;
 }
-
 .homeintroduction
 {
     font-family: 'Lucida Handwriting';
-    margin-top: 150px;
+/*  margin-top: 150px;
     margin-left: 400px;
-    font-size:10px;
+    font-size:10px;  */
 }
