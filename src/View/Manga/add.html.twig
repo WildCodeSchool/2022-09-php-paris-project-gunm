@@ -1,0 +1,35 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+
+    <form action='' method='post' enctype="multipart/form-data">
+        <p class="text-center fw-bold fs-1 text-dark font-italic ">Ajout Manga</p>
+
+        <div class="d-grid gap-2 col-6 pb-5 mx-auto">
+            <input type="text" class="form-control" name="title" placeholder="Nom du manga">
+        </div>
+
+        <div class="d-grid gap-2 col-6 pb-5 mx-auto">
+            <input type="text" class="form-control" name="author" placeholder="Auteur">
+        </div>
+
+        <div class="d-grid gap-2 col-6 pb-5 mx-auto">
+            <textarea class="form-control" name="description" placeholder="Description"></textarea>
+        </div>
+
+        <div class="d-grid gap-2 col-6 pb-5 mx-auto">
+            <input class="btn-danger form-control" type="file" name="image">
+        </div>
+
+        <div class="d-grid gap-2 col-6 pb-5 mx-auto">
+            <input type="date" class="form-control" name="released_at" placeholder="Année de parution">
+        </div>
+
+        <div class="d-grid gap-2 col-6 pb-5 mx-auto">
+            <input type="text" class="form-control" name="category" placeholder="Catégorie">
+        </div>
+
+        <div class="d-grid gap-2 col-6 pb-4 mx-auto">
+            <button class="btn btn-danger" type="submit">Ajouter</button>
+        </div>
+	</form>
+{% endblock %}
