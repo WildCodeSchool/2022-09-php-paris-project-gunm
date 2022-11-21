@@ -5,80 +5,64 @@
 {% block content %}
 
     {# ---------------------------- FIRST CAROUSSEL FOR FAVORIS MANGAS ------------------------------------ #}
-
+    
     <h1 class="text-center mb-5 mt-5 pt-5 pb-3">FAVORIS</h1>
-
-    <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+    {% if mangasRands != 0 %}
+    <div id="carouselFavoris" class="carousel slide " data-bs-ride="carousel">
     <div class="carousel-inner">
-    {% for manga in mangas %} 
+    {% for mangasRand in mangasRands %} 
         <div class="carousel-item active ">
-            <img src="{{ manga.image }}" class="d-block img-fluid" alt="...">
+            <img src="{{ mangasRand.image }}" class="d-block img-fluid" >
         </div>
     {% endfor %}
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon buton_pink" aria-hidden="true"></span>
-        <span class="visually-hidden ">Previous</span>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselFavoris" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon button_pink " aria-hidden="true"></span>
+        <span class="visually-hidden ">Précédent</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon buton_pink" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselFavoris" data-bs-slide="next">
+        <span class="carousel-control-next-icon button_pink " aria-hidden="true"></span>
+        <span class="visually-hidden">Suivant</span>
     </button>
     </div>
+    {% else %}
+        <div class="container ">
+            <div class="row ">
+                <div class="text-center">
+                    <a class="btn button_pink " href="/manga/list?category=">Ajout favoris</a>
+                </div>    
+                <div class="mt-3">
+                    <p class="text-center">Cliquer pour ajouter un favoris.</p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
 
     <hr>
     {# ---------------------------- SECOND CAROUSSEL FOR ALL MANGAS ------------------------------------ #}
 
     <h1 class="text-center mb-5 mt-5 pt-5 pb-5">MANGAS</h1>
 
-    <div id="carouselExampleControlsMangas" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselMangas" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-    {% for mangasRand in mangasRands %} 
+    {% for manga in mangas %} 
         <div class="carousel-item active ">
-            <img src="{{ mangasRand.image }}" class="d-block img-fluid" alt="...">
+            <img src="{{ manga.image }}" class="d-block img-fluid" >
         </div>
     {% endfor %}
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsMangas" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon buton_pink" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselMangas" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon button_pink " aria-hidden="true"></span>
+        <span class="visually-hidden">Précédent</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsMangas" data-bs-slide="next">
-        <span class="carousel-control-next-icon buton_pink" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselMangas" data-bs-slide="next">
+        <span class="carousel-control-next-icon button_pink " aria-hidden="true"></span>
+        <span class="visually-hidden">Suivant</span>
     </button>
     </div>
 
     {# ---------------------------- BUTTONS SELECTION CATEGORY MANGAS ------------------------------------ #}
                                 
-    <div class="container mt-5 mb-5 ">
-        <div class="text-center row" role="group" aria-label="Basic radio toggle ">
-            <div class="col-xl-2 col-md-3 col-sm-4 col-xs-5">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" >
-                <label  class="btn buton_pink" id="label_all" for="btnradio1"><a href="/manga/list?category=">VOIR TOUT</a></label>
-            </div>
-            <div class="col-xl-2 col-md-3 col-sm-4 col-xs-5">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" >
-                <label class="btn buton_pink" for="btnradio2" ><a href="/manga/list?category=shonen">SHONENS</a></label>
-            </div>
-            <div class="col-xl-2 col-md-3 col-sm-4 col-xs-5">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" >
-                <label class="btn buton_pink" for="btnradio3" ><a href="/manga/list?category=shojo">SHOJOS</a></label>
-            </div>
-            <div class="col-xl-2 col-md-3 col-sm-4 col-xs-5">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off" >
-                <label class="btn buton_pink" for="btnradio4" ><a href="/manga/list?category=seinen">SEINENS</a></label>
-            </div>
-            <div class="col-xl-2 col-md-3 col-sm-4 col-xs-5">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off" >
-               <label class="btn buton_pink" for="btnradio5" > <a href="/manga/list?category=josei">JOSEIS</a></label>
-            </div>
-            <div class="col-xl-2 col-md-3 col-sm-4 col-xs-5">
-                 <input type="radio" class="btn-check" name="btnradio" id="btnradio6" autocomplete="off" ="change_loc('/manga/list?category=kodomo')">
-                <label class="btn buton_pink" for="btnradio6"><a href="/manga/list?category=kodomo">KODOMOS</a></label>
-
-            </div>
-        </div>
-    </div>
+    {% include 'Partials/filter.html.twig' %}
 {% endblock %}
-{% block javascript %}<script src="/assets/js/showcase.js"></script>{% endblock %}
