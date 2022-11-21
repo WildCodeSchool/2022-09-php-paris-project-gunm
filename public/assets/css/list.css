@@ -3,13 +3,13 @@
     background-color : #eb1163;
     color : white;
 }
-.color_back_button
-{
-    background-color:white;
-}
 .card_manga
 {
     margin: none;
+}
+a
+{
+    color:black;
 }
 .card {
     font-size: 1em;
