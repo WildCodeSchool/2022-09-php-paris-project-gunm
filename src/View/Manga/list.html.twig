@@ -12,16 +12,16 @@
                 <div class="col-5 card mb-3 mr-3 pr-3" style="max-width: 500px;">
                     <div class="row g-0 text-center ">
                         <div class="col-md-3">
-                            <img src="{{manga.image}}" class="img-fluid rounded-start" alt="...">
+                            <img src="{{manga.image}}" class="img-fluid rounded-start" >
                         </div>
                         <div class="col-md-7">
                             <div class="card-body m-0">
                                 <h4 class="card-title">{{manga.title}}</h4>
                                 <h5 class="card-title">{{manga.author}}</h5>
-                                    <h6 class="card-title">{{ manga.release_at|date("d/m/Y") }}</h6>
-                                <p id="manga{{manga.id}}" class="card-text collapse">{{manga.description}}</p>
+                                <h6 class="card-title">{{ manga.release_at|date("d/m/Y") }}</h6>
+                                <p id="manga_{{manga.id}}" class="card-text collapse">{{manga.description}}</p>
                                 <p>
-                                    <button class="btn button_pink  " type="button" data-bs-toggle="collapse" data-bs-target="#manga{{manga.id}}" aria-expanded="false" >
+                                    <button class="btn button_pink" type="button" data-bs-toggle="collapse" data-bs-target="#manga_{{manga.id}}" aria-expanded="false" >
                                     Voir plus
                                     </button>
                                 </p>
@@ -34,5 +34,3 @@
     </div>
 {% endblock %}
 
-
-{# partials filter twig inclure input href en bouton lie a bootstrap, dans un dossier, include dans les vues  #}

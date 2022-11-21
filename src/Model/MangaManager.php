@@ -5,6 +5,7 @@ namespace App\Model;
 use App\Model\Connection;
 use PDO;
 
+
 class MangaManager extends AbstractManager
 {
     public const TABLE = "manga";

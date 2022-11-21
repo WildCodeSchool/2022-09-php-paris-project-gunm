@@ -17,7 +17,6 @@ class MangaController extends AbstractController
 
     public function showcase(): string
     {
-        // var_dump($this->model->selectFavRand()); exit();
         return $this->twig->render('Manga/showcase.html.twig', [
             'mangas'      => $this->model->selectAll(),
             'mangasRands' => $this->model->selectFavRand()

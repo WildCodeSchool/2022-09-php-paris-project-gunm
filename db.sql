@@ -18,7 +18,7 @@ CREATE TABLE `manga_user` (
 CREATE TABLE `manga` (
   `id` int NOT NULL AUTO_INCREMENT,
   `author` varchar(100) NOT NULL,
-  `release_at` datetime NOT NULL,
+  `released_at` datetime NOT NULL,
   `image` varchar(255) NOT NULL,
   `title` varchar(100) NOT NULL,
   `category` varchar(100) NOT NULL,

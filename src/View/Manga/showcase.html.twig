@@ -8,31 +8,31 @@
     
     <h1 class="text-center mb-5 mt-5 pt-5 pb-3">FAVORIS</h1>
     {% if mangasRands != 0 %}
-    <div id="carouselFavoris" class="carousel slide " data-bs-ride="carousel">
-    <div class="carousel-inner">
-    {% for mangasRand in mangasRands %} 
+        <div id="carousel_favoris" class="carousel slide " data-bs-ride="carousel">
+            <div class="carousel-inner">
+        {% for mangasRand in mangasRands %} 
         <div class="carousel-item active ">
             <img src="{{ mangasRand.image }}" class="d-block img-fluid" >
         </div>
-    {% endfor %}
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselFavoris" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon button_pink " aria-hidden="true"></span>
-        <span class="visually-hidden ">Précédent</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselFavoris" data-bs-slide="next">
-        <span class="carousel-control-next-icon button_pink " aria-hidden="true"></span>
-        <span class="visually-hidden">Suivant</span>
-    </button>
-    </div>
+        {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel_favoris" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon button_pink" aria-hidden="true"></span>
+            <span class="visually-hidden ">Précédent</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel_favoris" data-bs-slide="next">
+            <span class="carousel-control-next-icon button_pink" aria-hidden="true"></span>
+            <span class="visually-hidden">Suivant</span>
+        </button>
+        </div>
     {% else %}
         <div class="container ">
             <div class="row ">
                 <div class="text-center">
-                    <a class="btn button_pink " href="/manga/list?category=">Ajout favoris</a>
+                    <a class="btn button_pink " href="/manga/list?category=">Ajout favori</a>
                 </div>    
                 <div class="mt-3">
-                    <p class="text-center">Cliquer pour ajouter un favoris.</p>
+                    <p class="text-center">Cliquer pour ajouter un favori.</p>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
 
     <h1 class="text-center mb-5 mt-5 pt-5 pb-5">MANGAS</h1>
 
-    <div id="carouselMangas" class="carousel slide" data-bs-ride="carousel">
+    <div id="carousel_mangas" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
     {% for manga in mangas %} 
         <div class="carousel-item active ">
@@ -52,11 +52,11 @@
         </div>
     {% endfor %}
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselMangas" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel_mangas" data-bs-slide="prev">
         <span class="carousel-control-prev-icon button_pink " aria-hidden="true"></span>
         <span class="visually-hidden">Précédent</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselMangas" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel_mangas" data-bs-slide="next">
         <span class="carousel-control-next-icon button_pink " aria-hidden="true"></span>
         <span class="visually-hidden">Suivant</span>
     </button>
