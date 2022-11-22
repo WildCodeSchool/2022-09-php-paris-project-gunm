@@ -10,9 +10,9 @@ class MangaController extends AbstractController
     public function __construct()
     {
         parent::__construct();
-        $this->mangaManager= new MangaManager();
+        $this->mangaManager = new MangaManager();
     }
-        public function show($id): string
+    public function show($id): string
     {
         if (empty($id)) {
             header('HTTP/1.1 400 Bad Request');
