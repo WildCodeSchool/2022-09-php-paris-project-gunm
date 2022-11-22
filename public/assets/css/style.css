@@ -1,3 +1,18 @@
-body {
-    color: #f76c6c;
+body
+{
+    background-size: cover;
+    background-image: url("/assets/images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.navbar-inner
+{
+    background:transparent;
+}
+
+.button_pink
+{
+    background-color : #eb1163;
+    color : white;
 }
