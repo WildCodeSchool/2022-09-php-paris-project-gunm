@@ -1,0 +1,34 @@
+
+{%  extends 'layout.html.twig' %}
+
+
+{% block content %}
+<div class="container">
+ <div class="row justify-content-center">
+        <img src="{{ manga.image }}" class="rounded mx-auto d-block"  style="width: 20rem;" alt="...">
+        <div class= "row justify-content-center text-center" >
+            <form action="/manga/delete" method="post">
+                <input type="hidden" name="manga_id" value="{{ manga.id }}"> 
+                <button type="submit">
+                    <img src="/assets/images/poubelle.svg" class="img-fluid" style="width: 1.5rem" alt="test">
+                </button>
+            </form>      
+            <div class="col-1">
+            <form action="/manga/fav" method="post">
+                <input type="hidden" name="manga_id" value="{{ manga.id }}">
+                <input type="hidden" name="is_fav" value="{{ manga.is_fav }}">
+                       <button type="submit">
+                       <img src="/assets/images/star-regular.svg" class="img-fluid" style="width: 1.5rem" alt="test">
+                       </button>
+                </form>
+      </div>
+
+      <div>
+      <p class="text-center mt-2  fst-italic fw-bold text-dark">{{ manga.author }}</p>
+      <p class="text-center fst-italic fw-bold text-dark">{{ manga.title }}</p>
+      <p class="text-center fst-italic fw-bold text-dark">{{ manga.released_at }}</p>
+      <p class="text-center fst-italic fw-bold text-dark">{{ manga.description}} </p> 
+     </div>
+  </div>
+</div>
+{% endblock %}

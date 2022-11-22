@@ -8,6 +8,9 @@
 // e.g route '/item/edit?id=1' will execute $itemController->edit(1)
 return [
     ''                      => ['HomeController', 'index',],
+    'manga/show'            => ['MangaController', 'showOne', ['id']],
+    'manga/delete'          => ['MangaController', 'delete'],
+    'manga/fav'             => ['MangaController' , 'fav'],
     'showcase'              => ['MangaController', 'showcase',],
     'manga/list'            => ['MangaController', 'list', ['category']],
     'manga/add'             => ['MangaController', 'add'],
