@@ -1,13 +1,11 @@
 {% extends 'layout.html.twig' %}
 {% block stylesheet %} <link rel="stylesheet" href="/assets/css/showcase.css">{% endblock %}
-{% block header %}
-{% endblock %}
 {% block content %}
 
     {# ---------------------------- FIRST CAROUSSEL FOR FAVORIS MANGAS ------------------------------------ #}
 
     <h1 class="text-center mb-5 mt-5 pt-5 pb-3">FAVORIS</h1>
-    {% if mangasRands != 0 %}
+    {% if mangasRands == 0 %}
         <div id="carousel_favoris" class="carousel slide " data-bs-ride="carousel">
             <div class="carousel-inner">
         {% for mangasRand in mangasRands %} 
