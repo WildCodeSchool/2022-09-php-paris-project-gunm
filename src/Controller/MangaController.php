@@ -2,12 +2,38 @@
 
 namespace App\Controller;
 
-use App\Controller\AbstractController;
 use App\Model\MangaManager;
 use DateTime;
 
 class MangaController extends AbstractController
 {
+    private MangaManager $model;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->model = new MangaManager();
+    }
+
+    public function showcase(): string
+    {
+        return $this->twig->render('Manga/showcase.html.twig', 
+        [
+            'mangas' => $this->model->selectAll(),
+            'mangasRands' => $this->model->selectMangaRand()
+        ]);
+    }
+    public function list(string $category): string
+    {
+        if (empty($category)) {
+            $mangas = $this->model->selectAll();
+        } else {
+            $mangas = $this->model->selectAllByCategory($category);
+        }
+
+        return $this->twig->
+        render('Manga/list.html.twig', ['mangas' => $mangas]);
+    }
     public function show()
     {
         return $this->twig->render('Manga/add.html.twig');
