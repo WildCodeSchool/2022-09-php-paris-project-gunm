@@ -23,6 +23,7 @@ class MangaController extends AbstractController
             'mangasRands' => $this->model->selectMangaRand()
         ]);
     }
+    
     public function list(string $category): string
     {
         if (empty($category)) {

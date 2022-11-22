@@ -10,3 +10,9 @@ body
 {
     background:transparent;
 }
+
+.button_pink
+{
+    background-color : #eb1163;
+    color : white;
+}
