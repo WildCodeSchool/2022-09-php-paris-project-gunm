@@ -18,7 +18,11 @@ CREATE TABLE `manga_user` (
 CREATE TABLE `manga` (
   `id` int NOT NULL AUTO_INCREMENT,
   `author` varchar(100) NOT NULL,
+<<<<<<< HEAD
   `released_at` datetime NOT NULL,
+=======
+  `date_release` datetime NOT NULL,
+>>>>>>> parent of b4f5f8b (correction pull request)
   `image` varchar(255) NOT NULL,
   `title` varchar(100) NOT NULL,
   `category` varchar(100) NOT NULL,

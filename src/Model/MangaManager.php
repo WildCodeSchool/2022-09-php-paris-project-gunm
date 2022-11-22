@@ -5,13 +5,32 @@ namespace App\Model;
 use App\Model\Connection;
 use PDO;
 
-
 class MangaManager extends AbstractManager
 {
+    protected PDO $pdo;
     public const TABLE = "manga";
-    public function selectFavRand(): array
+
+    public function __construct()
     {
-        $statement = $this->pdo->query("SELECT title, image FROM " .  static::TABLE  . " JOIN manga_user ON manga_user.manga_id = manga.id " . " WHERE is_fav = 1 " . " ORDER BY RAND() LIMIT 3 ");
+        $connection = new Connection();
+        $this->pdo = $connection->getconnection();
+    }
+
+    public function selectManga(): array
+    {
+        $statement = $this->pdo->query("SELECT title, image FROM " . static::TABLE . " LIMIT 3");
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function selectMangaRand(): array
+    {
+        $statement = $this->pdo->query("SELECT title, image FROM " .  static::TABLE  . " ORDER BY RAND() LIMIT 3");
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function selectAllMangas(): array
+    {
+        $statement = $this->pdo->query("SELECT * FROM " . static::TABLE);
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -22,7 +41,6 @@ class MangaManager extends AbstractManager
         $statement->execute();
         return $statement->fetchall(PDO::FETCH_ASSOC);
     }
-
     public function add(array $manga)
     {
 
