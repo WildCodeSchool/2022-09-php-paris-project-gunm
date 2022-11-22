@@ -12,7 +12,9 @@ abstract class AbstractManager
 {
     protected PDO $pdo;
 
+
     public const TABLE = "";
+
 
     public function __construct()
     {
@@ -45,10 +47,6 @@ abstract class AbstractManager
 
         return $statement->fetch();
     }
-
-    /**
-     * Delete row form an ID
-     */
     public function delete(int $id): void
     {
         // prepared request
