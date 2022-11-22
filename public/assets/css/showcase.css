@@ -1,0 +1,35 @@
+ #carousel_favoris img 
+ {
+    max-width: 700px;
+    min-width: 300px;
+    margin: auto;
+    height:300px;
+    object-fit:contain;
+}
+
+#carousel_mangas img
+{
+    max-width: 700px;
+    min-width: 300px;
+    margin: auto;
+    height:300px;
+    object-fit:contain;
+}
+
+.button_pink
+{
+    background-color : #eb1163;
+    color : white;
+}
+
+hr
+{
+    margin-top: 100px;
+    border: 20px solid black;
+    border-radius: 5px;
+}
+
+a
+{
+    color:black;
+}
