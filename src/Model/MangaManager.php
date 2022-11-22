@@ -7,13 +7,10 @@ use PDO;
 
 class MangaManager extends AbstractManager
 {
-    protected PDO $pdo;
     public const TABLE = "manga";
 
     public function __construct()
     {
-        $connection = new Connection();
-        $this->pdo = $connection->getconnection();
     }
 
     public function selectMangaRand(): array
