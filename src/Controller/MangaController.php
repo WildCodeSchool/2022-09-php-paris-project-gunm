@@ -13,7 +13,7 @@ class MangaController extends AbstractController
         parent::__construct();
         $this->mangaManager = new MangaManager();
     }
-    public function show($id): string
+    public function showOne($id): string
     {
         if (empty($id)) {
             header('HTTP/1.1 400 Bad Request');
@@ -43,7 +43,7 @@ class MangaController extends AbstractController
         }
     }
 
-    public2 function delete(): void
+    public function delete(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mangaId = trim($_POST['manga_id']);
@@ -62,17 +62,17 @@ class MangaController extends AbstractController
     {
         return $this->twig->render('Manga/showcase.html.twig', 
         [
-            'mangas' => $this->model->selectAll(),
-            'mangasRands' => $this->model->selectMangaRand()
+            'mangas' => $this->mangaManager->selectAll(),
+            'mangasRands' => $this->mangaManager->selectMangaRand()
         ]);
     }
     
     public function list(string $category): string
     {
         if (empty($category)) {
-            $mangas = $this->model->selectAll();
+            $mangas = $this->mangaManager->selectAll();
         } else {
-            $mangas = $this->model->selectAllByCategory($category);
+            $mangas = $this->mangaManager->selectAllByCategory($category);
         }
 
         return $this->twig->
